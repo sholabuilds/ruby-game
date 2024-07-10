@@ -1,4 +1,8 @@
+require_relative "playable"
+
 class Player
+    include Playable
+    
     attr_reader :name, :treasures_collected
     attr_accessor :health
 
@@ -12,16 +16,6 @@ class Player
     def add_treasure(name, points)
         @treasures_collected[name] += points
     end
-
-    # boost
-    def boost
-        @health += 20
-    end
-
-    # drain
-    def drain
-        @health -= 10
-    end 
 
     # score
     def score

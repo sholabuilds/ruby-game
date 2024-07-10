@@ -1,6 +1,6 @@
 Dinosaur kids High Scores:
-Kurama..............14360
-Phoenix.............12880
-Zikipili............12185
-Karthik.............11855
-Treezo.............. 6660
+Phoenix.............  645
+Karthik.............  525
+Kurama..............  400
+Zikipili............  315
+Treezo..............  213

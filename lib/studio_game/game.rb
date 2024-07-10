@@ -1,7 +1,10 @@
 require_relative "treasure_trove"
 require_relative "player"
+require_relative "auditable"
 
 class Game
+    include Auditable
+
     attr_reader :game_title, :players
 
     def initialize(game_title)
@@ -113,6 +116,8 @@ class Game
                 player.add_treasure(treasure.name, treasure.points)
 
                 puts "#{player.name} found a #{treasure.name} worth #{treasure.points} points"
+
+                audit(number_rolled)
             end
         end
         
