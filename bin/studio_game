@@ -1,7 +1,9 @@
-require_relative "lib/studio_game/game"
-require_relative "lib/studio_game/player"
-require_relative "lib/studio_game/clumsy_player"
-require_relative "lib/studio_game/crazy_player"
+#!/usr/bin/env ruby
+
+require_relative "../lib/studio_game/game"
+require_relative "../lib/studio_game/player"
+require_relative "../lib/studio_game/clumsy_player"
+require_relative "../lib/studio_game/crazy_player"
 
 game = StudioGame::Game.new("Dinosaur kids")
 

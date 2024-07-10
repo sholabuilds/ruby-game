@@ -3,7 +3,7 @@ require_relative "player"
 module StudioGame
     class ClumsyPlayer < Player
         def add_treasure(name, points)
-            points = points / 2.0
+            points = points / 2
             # call the default method from parent class
             super(name, points)
         end
