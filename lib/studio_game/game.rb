@@ -11,12 +11,18 @@ class Game
 
     # load player
     def load_players(file_name)
-        player_list = File.readlines(file_name, chomp: true)
+        if File.exist?(file_name)
+            player_list = File.readlines(file_name, chomp: true)
 
-        player_list.each do |line|
-            new_player = Player.from_csv(line)
-            
-            add_player(new_player)
+            player_list.each do |line|
+                new_player = Player.from_csv(line)
+                
+                add_player(new_player)
+            end
+        else
+            puts "Oh no, #{file_name} not found"
+            # exit if error
+            exit 1
         end
     end
 

@@ -37,7 +37,10 @@ class Player
     # from csv
     def self.from_csv(line)
         name, health = line.split(",")
-        Player.new(name, health.to_i)
+        Player.new(name, Integer(health))
+    rescue ArgumentError
+        puts "The health given #{health} is invalid, a default health has been assigned"
+        Player.new(name)
     end
 
     # to_s
