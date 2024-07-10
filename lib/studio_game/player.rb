@@ -34,6 +34,12 @@ class Player
         @treasures_collected.values.sum
     end
 
+    # from csv
+    def self.from_csv(line)
+        name, health = line.split(",")
+        Player.new(name, health.to_i)
+    end
+
     # to_s
     def to_s
         "I'm #{@name} with health = #{@health}, points = #{points} and score = #{score}"

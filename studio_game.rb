@@ -3,8 +3,11 @@ require_relative "lib/studio_game/player"
 
 game = Game.new("Dinosaur kids")
 
-game.load_players("players.csv")
+# __dir__ - absolute path 
+players_file = File.join(__dir__, "players.csv")
 
+# shift and get the first command line arg or default to player_file
+game.load_players(ARGV.shift || players_file)
 
 loop do
     print "\nHow many game rounds? ('quit' to exit) "
@@ -21,26 +24,4 @@ loop do
     end
 end
 
-
-# game.total_points_per_player
-# game.high_scores
-
-# puts "... #{player_4.treasures_collected.values.sum}"
-
-# player_1 = Player.new("finn", 60)
-# player_2 = Player.new("lucy", 90)
-# player_3 = Player.new("jase")
-# player_4 = Player.new("alex", 125)
-
-# game_2 = Game.new("Winner Takes All")
-# game_2.add_player(player_1)
-# game_2.add_player(player_2)
-# game_2.add_player(player_3)
-# game_2.add_player(player_4)
-# game_2.play
-
-
-
-
-# puts "Champ!" unless player_1.health <= 50
-
+game.save_high_scores
